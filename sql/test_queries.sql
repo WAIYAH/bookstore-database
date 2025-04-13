@@ -10,3 +10,4 @@ SELECT p.publisher_name, b.title
 FROM publisher p
 JOIN book b ON p.publisher_id = b.publisher_id
 WHERE p.publisher_name = 'Longhorn Publishers';
+
