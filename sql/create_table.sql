@@ -1,3 +1,34 @@
+CREATE TABLE country (
+    country_id INT PRIMARY KEY AUTO_INCREMENT,
+    country_name VARCHAR(100) NOT NULL
+);
+CREATE TABLE address (
+    address_id INT PRIMARY KEY AUTO_INCREMENT,
+    street VARCHAR(255) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    country_id INT,
+    FOREIGN KEY (country_id) REFERENCES country(country_id)
+);
+CREATE TABLE address_status (
+    status_id INT PRIMARY KEY AUTO_INCREMENT,
+    status_name VARCHAR(50) NOT NULL
+);
+CREATE TABLE customer (
+    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+CREATE TABLE customer_address (
+    customer_id INT,
+    address_id INT,
+    status_id INT,
+    PRIMARY KEY (customer_id, address_id),
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (address_id) REFERENCES address(address_id),
+    FOREIGN KEY (status_id) REFERENCES address_status(status_id)
+);
+
 CREATE TABLE shipping_method (
 shipping_method_id INT PRIMARY KEY AUTO_INCREMENT,
 method_name VARCHAR(50) NOT NULL,

@@ -46,3 +46,22 @@ VALUES
 (1, 1, ‘2025-04-01’), (2, 1, ‘2025-04-02’), (2, 4, ‘2025-04-03’),
 (3, 1, ‘2025-04-03’), (3, 3, ‘2025-04-04’);
 >>>>>>> 937328434e754f668ba9d4fd82c7f0c3c9f7eb0b
+
+
+INSERT INTO country (country_name) VALUES
+('Kenya'), ('Uganda'), ('Tanzania'), ('Nigeria'), ('Ethiopia');
+INSERT INTO address (street, city, country_id) VALUES
+('Kenyatta Avenue', 'Nairobi', 1), ('Moi Road', 'Mombasa', 1),
+('Nyerere Street', 'Dar es Salaam', 3), ('Kampala Road', 'Kampala', 2),
+('Bole Road', 'Addis Ababa', 5);
+
+INSERT INTO address_status (status_name) VALUES
+('Current'), ('Old'), ('Billing'), ('Shipping'), ('Temporary');
+INSERT INTO customer (first_name, last_name, email) VALUES
+('Amina', 'Kamau', 'amina.kamau@gmail.com'),
+('Juma', 'Okoth', 'juma.okoth@yahoo.com'),
+('Fatuma', 'Said', 'fatuma.said@outlook.com'),
+('Chukwudi', 'Okafor', 'chukwudi.o@protonmail.com'),
+('Wambui', 'Muriithi', 'wambui.muriithi@gmail.com');
+INSERT INTO customer_address (customer_id, address_id, status_id) VALUES
+(1, 1, 1), (2, 2, 1), (3, 3, 1), (4, 4, 4), (5, 1, 3);
