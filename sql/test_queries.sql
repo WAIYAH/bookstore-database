@@ -10,3 +10,9 @@ SELECT p.publisher_name, b.title
 FROM publisher p
 JOIN book b ON p.publisher_id = b.publisher_id
 WHERE p.publisher_name = 'Longhorn Publishers';
+
+-- Vanessa: Query 5: Swahili books
+SELECT b.title, bl.language_name
+FROM book b
+JOIN book_language bl ON b.language_id = bl.language_id
+WHERE bl.language_name = 'Swahili';
